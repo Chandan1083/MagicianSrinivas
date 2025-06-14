@@ -22,9 +22,9 @@
       .logo {
         position: static;
       }
-      .nav-menu {
+      /* .nav-menu {
         display: none;
-      }
+      } */
       .menu-toggle {
         display: flex;
       }
@@ -40,29 +40,55 @@
     height: 65px;
   }
 
-  .nav ul {
+  /* .nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
     margin: 0;
     padding: 0;
-  }
-
+  } */
+/* 
   .nav a {
     text-decoration: none;
     color: var(--bb-grey);
     font-weight: 500;
     transition: color 0.3s;
+  } */
+  .header {
+    padding-right: 0; /* or reduce if too much */
   }
+
+  .header-actions {
+    display: flex;
+    gap: 0.5rem; /* Reduce space between buttons */
+    margin-left: auto; /* Keep buttons right-aligned */
+    margin-right: 0;   /* ❗ eliminate any unintended margin */
+  }
+
+  .bb-btn { 
+     margin-right: 0 !important; /* Kill right margin on buttons */
+  }
+
 
   .nav a:hover {
     color: var(--bb-primary);
   }
 
-  .header-actions {
+  /* .header-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: fixed;
+    margin-left: 11rem;
+    
+  } */
+  .header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    /* position: fixed; */
+    margin-left: auto; /* this pushes buttons to the right */
+    margin-right: 0;
   }
   
 
@@ -286,6 +312,19 @@
 
             </div>   
             <div class="slider-wrapper">
+              <div class="row-container">
+                <div class="slider-row reverse">
+                  <img src="images/magic3.jpg" alt="">
+                  <img src="images/magic2.jpg" alt="">
+                  <img src="images/magic3.jpg" alt="">
+                  <img src="images/magic2.jpg" alt="">
+                  <img src="images/magic3.jpg" alt="">
+                  <img src="images/magic2.jpg" alt="">
+                  <!-- Duplicate for smooth loop -->
+                  <img src="images/magic3.jpg" alt="">
+                  <img src="images/magic2.jpg" alt="">
+                </div>
+              </div>
     <!-- Row 1: Left to Right -->
               <!-- <div class="row-container">
                 <div class="slider-row">
@@ -301,19 +340,7 @@
               </div> -->
             
               <!-- Row 2: Right to Left -->
-              <div class="row-container">
-                <div class="slider-row reverse">
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                  <!-- Duplicate for smooth loop -->
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                </div>
-              </div>
+              
           </div>
         </div>
     </section>
