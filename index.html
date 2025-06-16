@@ -10,156 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="website icon" type="png" href="images/icon1.png">
-<style>
-    /* Header Styles from head.html */
-    
-
-    @media screen and (max-width: 768px) {
-      .nav-container {
-        padding: 0 20px;
-        justify-content: space-between;
-      }
-      .logo {
-        position: static;
-      }
-      /* .nav-menu {
-        display: none;
-      } */
-      .menu-toggle {
-        display: flex;
-      }
-      .mobile-menu {
-        top: 80px;
-      }
-    }
-</style>
-<style>
-
-
-  .logo img {
-    height: 65px;
-  }
-
-  /* .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-  } */
-/* 
-  .nav a {
-    text-decoration: none;
-    color: var(--bb-grey);
-    font-weight: 500;
-    transition: color 0.3s;
-  } */
-  .header {
-    padding-right: 0; /* or reduce if too much */
-  }
-
-  .header-actions {
-    display: flex;
-    gap: 0.5rem; /* Reduce space between buttons */
-    margin-left: auto; /* Keep buttons right-aligned */
-    margin-right: 0;   /* ❗ eliminate any unintended margin */
-  }
-
-  .bb-btn { 
-     margin-right: 0 !important; /* Kill right margin on buttons */
-  }
-
-
-  .nav a:hover {
-    color: var(--bb-primary);
-  }
-
-  /* .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: fixed;
-    margin-left: 11rem;
-    
-  } */
-  .header-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    /* position: fixed; */
-    margin-left: auto; /* this pushes buttons to the right */
-    margin-right: 0;
-  }
-  
-
-
-  .bb-btn {
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: background 0.2s;
-    text-decoration: none;
-  }
-
-  .bb-btn.--outline {
-    color: var(--bb-primary);
-    border: 1px solid var(--bb-primary);
-    background: transparent;
-  }
-
-  .bb-btn.--outline:hover {
-    background: var(--bb-primary);
-    color: var(--bb-white);
-  }
-
-  .bb-btn.--primary {
-    color: var(--bb-white);
-    background: var(--bb-primary);
-    border: none;
-  }
-
-  .bb-btn.--primary:hover {
-    background: #b89436;
-  }
-
-  .bb-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-  }
-
-  .bb-hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--bb-grey);
-    transition: transform 0.3s;
-  }
-
-  @media (max-width: 768px) {
-    .nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background: var(--bb-white);
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      border-radius: 8px;
-    }
-
-    .nav.show {
-      display: flex;
-    }
-
-    .bb-hamburger {
-      display: flex;
-    }
-  }
-</style>
-
 </head>
 <body>  
     <section class="home" id="home">
@@ -183,10 +33,8 @@
                     <a href="https://wa.me/919848983721" target="_blank" class="bb-btn --whatsapp">
                         <i class="bi bi-whatsapp"></i>
                     </a>
-                  <!-- <a href="mailto:magiciansrinias111@gmail.com" class="bb-btn --outline">Contact</a> -->
                   <a href="button.html" class="bb-btn --primary">Book Now</a>
 
-                  <!-- <button class="bb-hamburger" aria-label="Toggle menu"> -->
                     <span></span><span></span><span></span>
 
                   </button>
@@ -210,8 +58,7 @@
         <div class="about">
             <div class="about-headinfo">
                 <h3>People have always been fascinated by the wonders of magic.</h3>
-                <p>Magic has always captivated people because it taps into our innate sense of wonder and curiosity.</p>
-                <!-- <a href="#contact" class="button" id="contactnow">Contact Now</a> -->
+                <p style="color: #fff !important;">Magic has always captivated people because it taps into our innate sense of wonder and curiosity.</p>
             </div>
             <div class="about-main">
                 <div class="about-info">
@@ -237,7 +84,6 @@
                 </div>
             </div>
             <div class="about-footer">
-                <!-- <h3><span>Magical Servies</span></h3> -->
                 <h2>Spellbindling Performances For Every Occusion</h2>
             </div> 
         </div>
@@ -320,55 +166,16 @@
                   <img src="images/magic2.jpg" alt="">
                   <img src="images/magic3.jpg" alt="">
                   <img src="images/magic2.jpg" alt="">
-                  <!-- Duplicate for smooth loop -->
                   <img src="images/magic3.jpg" alt="">
                   <img src="images/magic2.jpg" alt="">
                 </div>
               </div>
-    <!-- Row 1: Left to Right -->
-              <!-- <div class="row-container">
-                <div class="slider-row">
-                  <img src="images/magic2.jpg" alt="">
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                  <img src="images/magic3.jpg" alt="">
-                  <img src="images/magic2.jpg" alt="">
-                  <img src="images/magic3.jpg" alt="">
-                </div>
-              </div> -->
-            
-              <!-- Row 2: Right to Left -->
               
           </div>
         </div>
     </section>
     <section class="contact" id="contact">
-        
-        <div class="contact-container">
-            <div class="cont-info">
-                <h2 class="heading">Contact<span> Us</span></h2>
-            </div>
-            <div class="cont-box">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class='bx bxs-phone-call'></i>
-                    </div>
-                    <h3>Call Us</h3>
-                    <p>8074226217</p>
-                    <p>9848983721</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class='bx bx-envelope'></i>
-                    </div>
-                    <h3>Email Us</h3>
-                    <p>magiciansrinivas111@gmail.com</p>
-                </div>
-            </div>
-    
-        </div>
+
         <div class="magical-extra">
         </br>
             <h3><span>We Are In Miraculous</span></h3>
@@ -429,26 +236,17 @@
                 <p>✉️ <a href="mailto:magiciansrinivas111@email.com">magiciansrinivas111@gmail.com</a></p>
                 <p>📍 Nizamabad, Telangana</p>
             </div>
-            <a href="https://maps.app.goo.gl/8UnWVLZrd35uR2Y96">View On Google</a>
+            <a href="https://maps.app.goo.gl/8UnWVLZrd35uR2Y96" class="google">View On Google</a>
 
             <div class="services">
                 <p>• Birthday Parties • Corporate Events • Weddings • Magic Shows</p>
             </div>
-            
-            <!-- l -->
+
 
             <div class="copyright">
                 <p>© 2025 Professional Magician. All rights reserved.</p>
             </div>
         </div>
-        <!-- <h2>Our Location</h2> -->
-
-        <!-- <div class="map-container">
-          <iframe
-            src="https://maps.app.goo.gl/8UnWVLZrd35uR2Y96"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div> -->
     </footer>
     <script src="script.js"></script>
     <script>
@@ -458,7 +256,7 @@
 
         let index = 0;
         let interval;
-        let direction = 1; // 1 = forward, -1 = backward
+        let direction = 1; 
 
         function updateCarousel() {
           carouselImages.style.transition = "transform 0.5s ease-in-out";
