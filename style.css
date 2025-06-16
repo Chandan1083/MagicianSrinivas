@@ -973,6 +973,7 @@ section {
     .magicial-box p {
       font-size: 1rem;
       line-height: 1.5;
+      color: #fff !important;
     }
     .magical-extra {
         text-align: center;
@@ -1207,8 +1208,9 @@ section {
     }
 
     .magicial-box p {
-      font-size: 1rem;
-      line-height: 1.5;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #fff !important;
     }
     .magical-extra {
         text-align: center;
