@@ -1,0 +1,33 @@
+<div class="form-container" style="max-width: 500px; margin: auto; padding: 20px; border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-family: Arial, sans-serif; background: #fff; display: flex; flex-direction: column; gap: 10px;">
+  <h2 style="text-align: center; font-size: 1.5rem; color: #333;">Book Your Magical Event</h2>
+
+  <input type="text" id="name" placeholder="Name" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
+  <input type="date" id="date" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
+  <input type="text" id="location" placeholder="Event Type" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
+  <input type="text" id="location" placeholder="Event Location" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
+  <textarea id="message" placeholder="Special Notes" rows="3" style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;"></textarea>
+
+  <a id="whatsappLink" class="btn" style="text-align: center;background:#007bff; color:white; padding: 12px; border-radius: 5px; font-size: 1.1rem; text-decoration: none; transition: background 0.3s;">Submit</a>
+</div>
+
+<script>
+  const whatsappLink = document.getElementById("whatsappLink");
+
+  whatsappLink.addEventListener("click", function () {
+    const name = document.getElementById("name").value.trim();
+    const date = document.getElementById("date").value.trim();
+    const location = document.getElementById("location").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !date || !location) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    const text = `Hello Magician,\n\nI want to book a show:\n👤 Name: ${name}\n📅 Date: ${date}\n📍 Location: ${location}\n📝 Message: ${message || 'None'}`;
+    const encoded = encodeURIComponent(text);
+    const phone = "919848983721";
+    const url = `https://wa.me/${phone}?text=${encoded}`;
+    whatsappLink.setAttribute("href", url);
+  });
+</script>
