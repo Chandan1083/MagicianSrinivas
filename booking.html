@@ -1,33 +1,127 @@
-<div class="form-container" style="max-width: 500px; margin: auto; padding: 20px; border: 2px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-family: Arial, sans-serif; background: #fff; display: flex; flex-direction: column; gap: 10px;">
-  <h2 style="text-align: center; font-size: 1.5rem; color: #333;">Book Your Magical Event</h2>
-
-  <input type="text" id="name" placeholder="Name" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
-  <input type="date" id="date" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
-  <input type="text" id="location" placeholder="Event Type" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
-  <input type="text" id="location" placeholder="Event Location" required style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;">
-  <textarea id="message" placeholder="Special Notes" rows="3" style="padding: 10px; border: 1px solid #aaa; border-radius: 5px; font-size: 1rem;"></textarea>
-
-  <a id="whatsappLink" class="btn" style="text-align: center;background:#007bff; color:white; padding: 12px; border-radius: 5px; font-size: 1.1rem; text-decoration: none; transition: background 0.3s;">Submit</a>
-</div>
-
-<script>
-  const whatsappLink = document.getElementById("whatsappLink");
-
-  whatsappLink.addEventListener("click", function () {
-    const name = document.getElementById("name").value.trim();
-    const date = document.getElementById("date").value.trim();
-    const location = document.getElementById("location").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !date || !location) {
-      alert("Please fill all required fields.");
-      return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Magical Event</title>
+  <style>
+    :root {
+      --bb-primary: #CCAB43;
+      --bb-primary-hover: #b89436;
     }
 
-    const text = `Hello Magician,\n\nI want to book a show:\n👤 Name: ${name}\n📅 Date: ${date}\n📍 Location: ${location}\n📝 Message: ${message || 'None'}`;
-    const encoded = encodeURIComponent(text);
-    const phone = "919848983721";
-    const url = `https://wa.me/${phone}?text=${encoded}`;
-    whatsappLink.setAttribute("href", url);
-  });
-</script>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      max-width: 500px;
+      width: 100%;
+      padding: 25px 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-container textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      background: var(--bb-primary);
+      color: white;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--bb-primary-hover);
+    }
+
+    @media (max-width: 500px) {
+      .form-container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Book Your Magical Event</h2>
+
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="date" id="date" required />
+    <input type="text" id="eventType" placeholder="Event Type" required />
+    <input type="text" id="location" placeholder="Event Location" required />
+    <textarea id="message" placeholder="Special Notes" rows="3"></textarea>
+
+    <a id="whatsappLink" class="btn">Submit</a>
+  </div>
+
+  <script>
+    // Set today's date as the minimum selectable
+    const dateInput = document.getElementById("date");
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute("min", today);
+
+    const whatsappLink = document.getElementById("whatsappLink");
+
+    whatsappLink.addEventListener("click", function () {
+      const name = document.getElementById("name").value.trim();
+      const date = document.getElementById("date").value.trim();
+      const eventType = document.getElementById("eventType").value.trim();
+      const location = document.getElementById("location").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !date || !eventType || !location) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const text = `Hello Magician,%0A%0AI want to book a show:%0A👤 Name: ${name}%0A📅 Date: ${date}%0A🎉 Event Type: ${eventType}%0A📍 Location: ${location}%0A📝 Message: ${message || 'None'}`;
+      const phone = "919848983721";
+      const url = `https://wa.me/${phone}?text=${text}`;
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
